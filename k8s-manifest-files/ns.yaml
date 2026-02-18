@@ -1,0 +1,31 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: pathao-ns
+
+---
+
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: indrive-ns
+
+---
+
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: uber-ns
+
+---
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: rapido-ns
+
+---
+
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: edrive-ns
