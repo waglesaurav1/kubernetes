@@ -21,3 +21,95 @@ spec:
           image: muralisocial123/ipl:latest
           ports:
             - containerPort: 3000
+
+---
+
+apiVersion: apps/v1 
+kind: Deployment
+metadata:
+  name: netflix-deployment
+  namespace: saurav-ns
+spec:
+  replicas: 5
+  selector:
+    matchLabels:
+      app: netflix
+  template:
+    metadata:
+      labels:
+        app: netflix
+    spec:
+      containers:
+        - name: netflix-container
+          image: muralisocial123/netflix-25.v1:latest
+          ports:
+            - containerPort: 80
+
+---
+
+apiVersion: apps/v1 
+kind: Deployment
+metadata:
+  name: nginx-deployment
+  namespace: saurav-ns
+spec:
+  replicas: 5
+  selector:
+    matchLabels:
+      app: nginx
+  template:
+    metadata:
+      labels:
+        app: nginx
+    spec:
+      containers:
+        - name: nginx-container
+          image: nginx:latest
+          ports:
+            - containerPort: 80
+
+---
+
+apiVersion: apps/v1 
+kind: Deployment
+metadata:
+  name: httpd-deployment
+  namespace: saurav-ns
+spec:
+  replicas: 5
+  selector:
+    matchLabels:
+      app: httpd
+  template:
+    metadata:
+      labels:
+        app: httpd
+    spec:
+      containers:
+        - name: httpd-container
+          image: httpd:latest
+          ports:
+            - containerPort: 80
+
+---
+
+apiVersion: apps/v1 
+kind: Deployment
+metadata:
+  name: node-deployment
+  namespace: saurav-ns
+spec:
+  replicas: 5
+  selector:
+    matchLabels:
+      app: node
+  template:
+    metadata:
+      labels:
+        app: node
+    spec:
+      containers:
+        - name: node-container
+          image: node:18-alpine
+          ports:
+            - containerPort: 3000
